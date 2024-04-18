@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Visualización de Datos
+    </ion-title>
+  </ion-toolbar>
+  <ion-button (click)="generarPDF()">Generar PDF</ion-button>
+</ion-header>
+
+<ion-content>
+   <div #container>
+    <div class="dashboard-content">
+      <div class="seccion header">
+        <h1>Dashboard</h1>
+      </div>
+      <!-- cremos un div con los 3 graficos y dentro de él, un div con cada grafico, le damos los estilos con la clase-->
+      <div class="seccion clase-graficos">
+        <div>
+          <app-bar-chart [nombresCategorias]="categorias" [backgroundColorCategorias]="backgroundColorCat" [borderColorCategorias]="borderColorCat"></app-bar-chart>
+        </div>
+        <div>
+           <app-pie-chart></app-pie-chart>
+        </div>
+        <div>
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+      <!-- tabla-->
+      <div class="table-container">
+        <app-tablas [datosTabla]="datosTablaTab1"></app-tablas>
+      </div>
+      <!--lista-->
+      <div class="seccion list-container">
+        <h2 class="clase-lista">List</h2>
+        <ul *ngFor="let lista of datosLista">
+          <li>{{lista}}</li>
+        </ul>
+      </div>
+      <!-- duplicamos el codigo-->
+      <div class="table-container"> 
+        <app-tablas [datosTabla]="datosTablaTab1"></app-tablas>
+      </div>
+      <div class="seccion list-container">
+        <h2 class="clase-lista">List</h2>
+        <ul *ngFor="let lista of datosLista">
+          <li>{{lista}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ion-content>

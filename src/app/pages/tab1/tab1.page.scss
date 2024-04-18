@@ -1,0 +1,50 @@
+/* Estilos generales para el PDF */
+.dashboard-content {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.header {
+  text-align: center;
+  vertical-align: top;  
+}
+
+.header h1 {
+  font-size: xx-large;
+}
+
+.list-container,
+.table-container {
+  padding-top: 15px;
+  background-color: #fff;
+}
+
+.list-container h2,
+.table-container h2{
+  text-align: center;
+  font-size: 20px;
+}
+
+.clase-graficos {
+  width: 100%;
+  // adecuaciones segun el tamaño de la pagina
+  @media (max-width: 1049px) {
+    display: block;
+  }
+  @media (min-width: 1050px) {
+    display: inline-flex;
+    align-items: center; 
+  }
+}
+.clase-graficos > div {
+  
+   // adecuaciones segun el tamaño de la pagina
+   @media (max-width: 1049px) {
+    width: 100%;
+  }
+  @media (min-width: 1050px) {
+    width: 33.33%;
+  }
+}
+

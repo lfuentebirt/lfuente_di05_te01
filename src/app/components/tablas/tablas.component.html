@@ -1,0 +1,22 @@
+<!-- recorremos los datos de la tabla e indicamos un pipe de 10 -->
+<div *ngFor="let row of datosTabla | tablePipe: 10 ; let first = first">
+   <!-- hacemos una seccion por cada tabla de 10-->
+  <div class="contenedor-tabla" [ngClass]="{'seccion': row.length <= 10}">
+  <!-- condición para que el titulo solo se muestre en la primera tabla-->
+  <h2 *ngIf="first">Table</h2>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <!-- Encabezados de la tabla -->
+          <th *ngFor="let item of row[0] | keyvalue">{{ item.key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas de la tabla -->
+        <tr *ngFor="let fila of row">
+          <td *ngFor="let item of fila | keyvalue">{{ item.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
